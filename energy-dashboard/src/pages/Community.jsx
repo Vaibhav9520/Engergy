@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Don't forget to import Link if you're using it for navigation
+import { Link } from 'react-router-dom'; 
 
 const Community = () => {
   // Sample data for community discussions with an Indian focus
@@ -78,61 +78,73 @@ const Community = () => {
 
   return (
     <div className="container-fluid">
-      <div className="row">
-        {/* Sidebar */}
-        <div className="col-md-2 bg-dark text-light vh-100 p-3">
-          {/* <h4 className="text-center">Community Discussion</h4> */}
-          <ul className="list-group">
-            <li className="list-group-item bg-dark text-light border-0">
-              <Link to="/" className="text-light text-decoration-none">
-                Home
-              </Link>
-            </li>
-            <li className="list-group-item bg-dark text-light border-0">
-              <Link to="/analytics" className="text-light text-decoration-none">
-                Analytics
-              </Link>
-            </li>
-            <li className="list-group-item bg-dark text-light border-0">
-              <Link to="/predictions" className="text-light text-decoration-none">
-                Predictions
-              </Link>
-            </li>
-            <li className="list-group-item bg-dark text-light border-0">
-              <Link to="/community" className="text-light text-decoration-none">
-                Community
-              </Link>
-            </li>
-          </ul>
-        </div>
+      {/* Sidebar */}
+      <header className="py-3 shadow-lg" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1501594907353-3b3070dce92e)', backgroundSize: 'cover', backgroundPosition: 'center', color: 'white' }}>
+        <nav className="navbar navbar-expand-lg navbar-light container">
+          <Link className="navbar-brand" to="/" style={{ fontFamily: 'Poppins, sans-serif' }}>
+            <h3 className="text-white">EnergyFlow</h3>
+          </Link>
 
-        {/* Main Content Area */}
-        <div className="col-md-10">
-          <div className="container mt-4">
-            <h2 className="text-center mb-4">🗣️ Community Discussions on Sustainable Energy</h2>
-            <p className="text-center mb-4">Join conversations about sustainable energy, share your insights, and learn from others in the Indian context!</p>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav ms-auto">
+              <li className="nav-item">
+                <Link className="nav-link text-white" to="/dashboard">Dashboard</Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link text-white" to="/analytics">Analytics</Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link text-white" to="/predictions">Predictions</Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link text-white" to="/community">Community</Link>
+              </li>
+              {/* Login Button */}
+              <li className="nav-item">
+                <Link className="nav-link text-white" to="/login">
+                  <button className="btn btn-outline-light">Login</button>
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
 
-            <div className="row">
-              {discussions.map((discussion, index) => (
-                <div className="col-md-4 mb-4" key={index}>
-                  <div className="card shadow-sm h-100">
-                    <div className="card-body">
-                      <h5 className="card-title">{discussion.title}</h5>
-                      <p className="card-text">{discussion.description}</p>
-                      <p className="card-text"><strong>Author:</strong> {discussion.author}</p>
-                      <div className="d-flex justify-content-between">
-                        <span><i className="bi bi-chat-left-dots"></i> {discussion.comments} Comments</span>
-                        <span><i className="bi bi-heart-fill"></i> {discussion.likes} Likes</span>
-                      </div>
-                    </div>
-                    <div className="card-footer text-center">
-                      <button className="btn btn-primary">Join Discussion</button>
-                    </div>
+      {/* Main Content Area */}
+      <div className="container mt-4">
+        <h2 className="text-center mb-4">🗣️ Community Discussions on Sustainable Energy</h2>
+        <p className="text-center mb-4">Join conversations about sustainable energy, share your insights, and learn from others in the Indian context!</p>
+
+        <div className="row">
+          {discussions.map((discussion, index) => (
+            <div className="col-md-4 mb-4" key={index}>
+              <div className="card shadow-sm h-100">
+                <div className="card-body">
+                  <h5 className="card-title">{discussion.title}</h5>
+                  <p className="card-text">{discussion.description}</p>
+                  <p className="card-text"><strong>Author:</strong> {discussion.author}</p>
+                  <div className="d-flex justify-content-between">
+                    <span><i className="bi bi-chat-left-dots"></i> {discussion.comments} Comments</span>
+                    <span><i className="bi bi-heart-fill"></i> {discussion.likes} Likes</span>
                   </div>
                 </div>
-              ))}
+                <div className="card-footer text-center">
+                  <button className="btn btn-primary w-100">Join Discussion</button>
+                </div>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>

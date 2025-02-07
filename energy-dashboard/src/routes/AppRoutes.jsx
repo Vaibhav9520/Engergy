@@ -5,6 +5,8 @@ import Analytics from '../pages/Analytics';
 import Predictions from '../pages/Predictions';
 import Community from '../pages/Community';
 import Dashboard from '../components/Dashboard';
+import Login from '../pages/Login';
+import Chatbot from '../pages/Chatbot';
 
 const AppRoutes = () => {
   return (
@@ -15,6 +17,8 @@ const AppRoutes = () => {
         <Route path="/analytics" element={<Analytics />} />
         <Route path="/predictions" element={<Predictions />} />
         <Route path="/community" element={<Community />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/chatbot" element={<Chatbot />} />
       </Routes>
     </Router>
   );
