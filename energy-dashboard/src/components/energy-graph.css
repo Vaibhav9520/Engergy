@@ -1,0 +1,13 @@
+.chart-container {
+    height: 400px;  /* Set the height of the chart */
+    width: 100%;    /* Make sure the chart spans the full width of its parent container */
+  }
+  
+  .card {
+    border-radius: 15px; /* Optional: for rounded corners */
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
